@@ -22,7 +22,7 @@ mongoose
 
 app.use(
   cors({
-    origin:"https://alumni-network-portal-g0gqtxjug-shivuji3693-9596s-projects.vercel.app",
+    origin:"alumni-network-portal-od6bxirdw-shivuji3693-9596s-projects.vercel.app",
     credentials: true
   })
 );
