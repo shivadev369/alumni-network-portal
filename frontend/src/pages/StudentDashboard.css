@@ -1,0 +1,10 @@
+.dashboard-title {
+  margin-bottom: 20px;
+  color: #0a192f;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}

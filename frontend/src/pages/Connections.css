@@ -1,0 +1,141 @@
+/* PAGE LAYOUT */
+
+.connections-page{
+  display:flex;
+  flex-direction:column;   /* makes containers vertical */
+  align-items:center;      /* center horizontally */
+  gap:30px;
+  padding:40px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+
+/* CONTAINER */
+
+.connections-container{
+  width:600px;
+  max-height:400px;
+  background:#f9fafc;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  overflow-y:auto;
+}
+
+
+/* TITLE */
+
+.connections-container h2{
+  text-align:center;
+  margin-bottom:15px;
+  font-size:20px;
+  font-weight:600;
+}
+
+
+/* CARD */
+
+.request-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#ffffff;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+/* TEXT */
+
+.request-card h3{
+  margin:0;
+  font-size:16px;
+}
+
+.request-card p{
+  margin:5px 0 0 0;
+  color:gray;
+  font-size:14px;
+}
+
+
+/* BUTTON GROUP */
+
+.buttons{
+  display:flex;
+  gap:10px;
+}
+
+
+/* ACCEPT BUTTON */
+
+.accept-btn{
+  background:#4caf50;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.accept-btn:hover{
+  background:#43a047;
+}
+
+
+/* REJECT BUTTON */
+
+.reject-btn{
+  background:#f44336;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.reject-btn:hover{
+  background:#d32f2f;
+}
+
+
+/* MESSAGE BUTTON */
+
+.message-btn{
+  background:#1976d2;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.message-btn:hover{
+  background:#1565c0;
+}
+
+
+/* EMPTY TEXT */
+
+.no-requests{
+  text-align:center;
+  color:gray;
+  margin-top:20px;
+}
+
+
+/* SCROLLBAR */
+
+.connections-container::-webkit-scrollbar{
+  width:6px;
+}
+
+.connections-container::-webkit-scrollbar-thumb{
+  background:#c7c7c7;
+  border-radius:10px;
+}

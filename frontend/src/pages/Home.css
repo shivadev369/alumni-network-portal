@@ -1,0 +1,313 @@
+/* =======================
+   GLOBAL
+======================= */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8fafc;
+}
+
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+background: linear-gradient(135deg, #f8f9fb, #e9f2ff);
+}
+/* =======================
+   FOOTER STYLE CONTACT
+======================= */
+
+/* Main container same as section style */
+.contact-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Left image */
+.contact-image img {
+  width: 350px;
+  border-radius: 10px;
+}
+
+/* Right content grid */
+.contact-content {
+  display: flex;
+  gap: 25px;
+  flex: 1;
+}
+
+/* Columns */
+.footer-col {
+  min-width: 200px;
+}
+
+/* Titles */
+.footer-col h3 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+
+/* Text */
+.footer-col p,
+.footer-col li {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-col a:hover {
+  color: #1e3a8a;
+}
+
+/* Icons */
+.icon {
+  font-size: 14px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* underline effect */
+.footer-col h3::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: #2563eb;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.footer-col p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+  color: #444;
+  cursor: pointer;
+}
+
+.footer-col ul li:hover {
+  color: #1e3a8a;
+}
+
+/* Links */
+.footer-col a {
+  text-decoration: none;
+  color: #444;
+}
+
+.footer-col a:hover {
+  color: #1e3a8a;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+
+.home-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: linear-gradient(to right, #2563eb, #1e3a8a);;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: #030407;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fffbfb;
+  font-weight: 500;
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 140px 60px 120px; /* 🔥 extra bottom space */
+}
+
+.hero-right {
+  position: static;   /* ❌ remove absolute */
+  z-index: 1;
+}
+
+.hero-right img {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Left side text */
+.hero-left {
+  width: 50%;
+  z-index: 2;
+
+}
+
+
+.hero-left h1 {
+  font-size: 44px;
+  color: #1e3a8a;
+}
+
+.hero-left p {
+  margin: 20px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.primary-btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* 🔥 Hero Image Bigger & Background Style */
+
+/* =======================
+   SECTIONS
+======================= */
+
+.section {
+  padding: 70px 60px;
+  background: white;
+  margin: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Section Titles */
+.section h2 {
+  color: #1e3a8a;
+}
+
+/* =======================
+   ABOUT SECTION
+   (Image Centered)
+======================= */
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;  /* paragraph centered */
+  gap: 25px;
+}
+
+.section-content img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* =======================
+   CONTACT SECTION
+   (Text Left, Image Right)
+======================= */
+
+.section-content.reverse {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.section-content.reverse .text {
+  width: 50%;
+}
+
+.section-content.reverse img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-right {
+    position: static;
+    margin-top: 30px;
+  }
+
+  .hero-right img {
+    width: 300px;
+  }
+
+  .section {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+
+  .section-content.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-content.reverse .text {
+    width: 100%;
+  }
+}
