@@ -55,7 +55,7 @@ const CreateInterview = () => {
   // FETCH NOTIFICATIONS
   useEffect(()=>{
 
-    axios.get(`https://alumni-backend-vhm7.onrender.com/notifications/${alumni._id}`)
+    axios.get(`https://alumni-backend-connect.onrender.com/notifications/${alumni._id}`)
     .then(res=>setNotifications(res.data))
     .catch(err=>console.log(err))
 
@@ -66,7 +66,7 @@ const CreateInterview = () => {
   const searchPeople = async () => {
 
     const res = await axios.get(
-      `https://alumni-backend-vhm7.onrender.com/search?name=${search}`
+      `https://alumni-backend-connect.onrender.com/search?name=${search}`
     );
 
     setResults(res.data);
@@ -97,7 +97,7 @@ const CreateInterview = () => {
 
     try {
 
-      await axios.post("https://alumni-backend-vhm7.onrender.com/create-interview", {
+      await axios.post("https://alumni-backend-connect.onrender.com/create-interview", {
         company: finalCompany,
         role: finalRole,
         experience: form.experience,

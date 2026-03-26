@@ -16,7 +16,7 @@ const ManagePosts = () => {
 
   const fetchPosts = async () => {
 
-    const res = await axios.get("https://alumni-backend-vhm7.onrender.com/posts");
+    const res = await axios.get("https://alumni-backend-connect.onrender.com/posts");
 
     setPosts(res.data);
 
@@ -26,7 +26,7 @@ const ManagePosts = () => {
 
     if(!window.confirm("Delete this post?")) return;
 
-    await axios.delete(`https://alumni-backend-vhm7.onrender.com/posts/${id}`);
+    await axios.delete(`https://alumni-backend-connect.onrender.com/posts/${id}`);
 
     fetchPosts();
 

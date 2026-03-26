@@ -26,7 +26,7 @@ const ChatPage = () => {
     try {
 
       const res = await axios.get(
-        `https://alumni-backend-vhm7.onrender.com/messages/${currentUser._id}/${userId}`
+        `https://alumni-backend-connect.onrender.com/messages/${currentUser._id}/${userId}`
       );
 
       setMessages(res.data);
@@ -85,7 +85,7 @@ const ChatPage = () => {
     try {
 
       const res = await axios.post(
-        "https://alumni-backend-vhm7.onrender.com/send-message",
+        "https://alumni-backend-connect.onrender.com/send-message",
         {
           senderId: currentUser._id,
           receiverId: userId,

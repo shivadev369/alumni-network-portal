@@ -26,7 +26,7 @@ const [showDropdown,setShowDropdown] = useState(false);
 
 useEffect(()=>{
 
-axios.get("https://alumni-backend-vhm7.onrender.com/posts")
+axios.get("https://alumni-backend-connect.onrender.com/posts")
 .then(res=>setPosts(res.data))
 .catch(err=>console.log(err))
 
@@ -39,7 +39,7 @@ axios.get("https://alumni-backend-vhm7.onrender.com/posts")
 useEffect(()=>{
 
 axios
-.get(`https://alumni-backend-vhm7.onrender.com/student/${student._id}`)
+.get(`https://alumni-backend-connect.onrender.com/student/${student._id}`)
 .then(res=>{
 setSkills(res.data.skills || "")
 })
@@ -56,7 +56,7 @@ const searchPeople = async () => {
 try{
 
 const res = await axios.get(
-`https://alumni-backend-vhm7.onrender.com/search?name=${search}`
+`https://alumni-backend-connect.onrender.com/search?name=${search}`
 )
 
 setResults(res.data)
@@ -95,7 +95,7 @@ const checkConnectionStatus = async (otherUserId)=>{
 try{
 
 const res = await axios.get(
-`https://alumni-backend-vhm7.onrender.com/connection-status/${student._id}/${otherUserId}`
+`https://alumni-backend-connect.onrender.com/connection-status/${student._id}/${otherUserId}`
 )
 
 setConnectionStatus(res.data.status)
@@ -114,7 +114,7 @@ const sendRequest = async (receiverId, receiverRole)=>{
 
 try{
 
-await axios.post("https://alumni-backend-vhm7.onrender.com/connect",{
+await axios.post("https://alumni-backend-connect.onrender.com/connect",{
 senderId:student._id,
 receiverId,
 senderModel:"Student",
@@ -135,7 +135,7 @@ console.log(err)
 
 const likePost = async(postId)=>{
 
-const res = await axios.post("https://alumni-backend-vhm7.onrender.com/like-post",{
+const res = await axios.post("https://alumni-backend-connect.onrender.com/like-post",{
 postId,
 userId:student._id
 })
@@ -150,7 +150,7 @@ setPosts(posts.map(p=>p._id===postId?res.data:p))
 
 const saveSkills = async()=>{
 
-await axios.post("https://alumni-backend-vhm7.onrender.com/update-student",{
+await axios.post("https://alumni-backend-connect.onrender.com/update-student",{
 id:student._id,
 skills:editSkills
 })
@@ -167,7 +167,7 @@ setEdit(false)
 useEffect(()=>{
 
 axios
-.get(`https://alumni-backend-vhm7.onrender.com/suggestions/${student._id}/student`)
+.get(`https://alumni-backend-connect.onrender.com/suggestions/${student._id}/student`)
 .then(res=>setSuggestions(res.data))
 .catch(err=>console.log(err))
 

@@ -24,7 +24,7 @@ function Connections() {
   useEffect(()=>{
 
     axios
-      .get(`https://alumni-backend-vhm7.onrender.com/notifications/${user._id}`)
+      .get(`https://alumni-backend-connect.onrender.com/notifications/${user._id}`)
       .then(res => setNotifications(res.data))
       .catch(err => console.log(err));
 
@@ -36,7 +36,7 @@ function Connections() {
   const searchPeople = async () => {
 
     const res = await axios.get(
-      `https://alumni-backend-vhm7.onrender.com/search?name=${search}`
+      `https://alumni-backend-connect.onrender.com/search?name=${search}`
     );
 
     setResults(res.data);
@@ -51,7 +51,7 @@ function Connections() {
     try {
 
       const res = await fetch(
-        `https://alumni-backend-vhm7.onrender.com/connect/pending/${user._id}`,
+        `https://alumni-backend-connect.onrender.com/connect/pending/${user._id}`,
         { credentials:"include" }
       );
 
@@ -75,7 +75,7 @@ function Connections() {
     try {
 
       const res = await fetch(
-        `https://alumni-backend-vhm7.onrender.com/connect/accepted/${user._id}`,
+        `https://alumni-backend-connect.onrender.com/connect/accepted/${user._id}`,
         { credentials:"include" }
       );
 
@@ -111,7 +111,7 @@ function Connections() {
     try {
 
       await fetch(
-        `https://alumni-backend-vhm7.onrender.com/connect/accept/${id}`,
+        `https://alumni-backend-connect.onrender.com/connect/accept/${id}`,
         {
           method:"PUT",
           credentials:"include"
@@ -137,7 +137,7 @@ function Connections() {
     try {
 
       await fetch(
-        `https://alumni-backend-vhm7.onrender.com/connect/reject/${id}`,
+        `https://alumni-backend-connect.onrender.com/connect/reject/${id}`,
         {
           method:"DELETE",
           credentials:"include"

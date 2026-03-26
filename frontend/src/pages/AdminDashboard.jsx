@@ -23,7 +23,7 @@ const handleLogout = () => {
   }, []);
 
   const fetchCounts = async () => {
-    const res = await axios.get("https://alumni-backend-vhm7.onrender.com/admin/dashboard-counts");
+    const res = await axios.get("https://alumni-backend-connect.onrender.com/admin/dashboard-counts");
     setCounts(res.data);
   };
   
@@ -31,7 +31,7 @@ const handleLogout = () => {
   /* LOAD STUDENTS */
 
   const loadStudents = async () => {
-    const res = await axios.get("https://alumni-backend-vhm7.onrender.com/admin/students");
+    const res = await axios.get("https://alumni-backend-connect.onrender.com/admin/students");
     setData(res.data);
     setView("students");
     setDepartmentFilter("");
@@ -40,7 +40,7 @@ const handleLogout = () => {
   /* LOAD ALUMNI */
 
   const loadAlumni = async () => {
-    const res = await axios.get("https://alumni-backend-vhm7.onrender.com/admin/alumni");
+    const res = await axios.get("https://alumni-backend-connect.onrender.com/admin/alumni");
     setData(res.data);
     setView("alumni");
     setDepartmentFilter("");
@@ -49,12 +49,12 @@ const handleLogout = () => {
   /* LOAD REQUESTS */
 
   const loadRequests = async (type = "") => {
-    const res = await axios.get(`https://alumni-backend-vhm7.onrender.com/admin/requests?type=${type}`);
+    const res = await axios.get(`https://alumni-backend-connect.onrender.com/admin/requests?type=${type}`);
     setData(res.data);
     setView("requests");
   };
   const loadPosts = async () => {
-  const res = await axios.get("https://alumni-backend-vhm7.onrender.com/posts");
+  const res = await axios.get("https://alumni-backend-connect.onrender.com/posts");
   setData(res.data);
   setView("posts");
 };
@@ -62,7 +62,7 @@ const deletePost = async (id) => {
 
   if (!window.confirm("Delete this post?")) return;
 
-  await axios.delete(`https://alumni-backend-vhm7.onrender.com/posts/${id}`);
+  await axios.delete(`https://alumni-backend-connect.onrender.com/posts/${id}`);
 
   loadPosts(); // refresh posts
 
@@ -74,7 +74,7 @@ const deletePost = async (id) => {
     try {
 
     const res = await axios.post(
-      `https://alumni-backend-vhm7.onrender.com/admin/accept/${id}`
+      `https://alumni-backend-connect.onrender.com/admin/accept/${id}`
     );
 
     alert(res.data.message);
@@ -99,7 +99,7 @@ const deletePost = async (id) => {
   /* REJECT */
 
   const rejectRequest = async (id) => {
-    await axios.delete(`https://alumni-backend-vhm7.onrender.com/admin/reject/${id}`);
+    await axios.delete(`https://alumni-backend-connect.onrender.com/admin/reject/${id}`);
     loadRequests();
     fetchCounts();
   };

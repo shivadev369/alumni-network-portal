@@ -35,7 +35,7 @@ const [connectionStatus, setConnectionStatus] = useState("");
   try {
 
     const res = await axios.get(
-      `https://alumni-backend-vhm7.onrender.com/connection-status/${alumni._id}/${otherUserId}`
+      `https://alumni-backend-connect.onrender.com/connection-status/${alumni._id}/${otherUserId}`
     );
 
     console.log("Response from backend:", res.data);
@@ -61,7 +61,7 @@ const [connectionStatus, setConnectionStatus] = useState("");
   // FETCH POSTS
   useEffect(()=>{
 
-    axios.get("https://alumni-backend-vhm7.onrender.com/posts")
+    axios.get("https://alumni-backend-connect.onrender.com/posts")
     .then(res=>setPosts(res.data))
     .catch(err=>console.log(err))
 
@@ -86,7 +86,7 @@ const [connectionStatus, setConnectionStatus] = useState("");
   // FETCH NOTIFICATIONS
   useEffect(()=>{
 
-    axios.get(`https://alumni-backend-vhm7.onrender.com/notifications/${alumni._id}`)
+    axios.get(`https://alumni-backend-connect.onrender.com/notifications/${alumni._id}`)
     .then(res=>setNotifications(res.data))
     .catch(err=>console.log(err))
 
@@ -96,7 +96,7 @@ const [connectionStatus, setConnectionStatus] = useState("");
   // FETCH PROFILE
   useEffect(()=>{
 
-  axios.get(`https://alumni-backend-vhm7.onrender.com/alumni/${alumni._id}`)
+  axios.get(`https://alumni-backend-connect.onrender.com/alumni/${alumni._id}`)
   .then(res=>{
     setProfile({
       currentWork:res.data.currentWork || "",
@@ -128,7 +128,7 @@ useEffect(() => {
 const searchPeople = async () => {
 
   const res = await axios.get(
-    `https://alumni-backend-vhm7.onrender.com/search?name=${search}`
+    `https://alumni-backend-connect.onrender.com/search?name=${search}`
   );
 
   setResults(res.data);
@@ -162,7 +162,7 @@ const searchPeople = async () => {
   // LIKE POST
   const likePost = async(postId)=>{
 
-    const res = await axios.post("https://alumni-backend-vhm7.onrender.com/like-post",{
+    const res = await axios.post("https://alumni-backend-connect.onrender.com/like-post",{
       postId,
       userId:alumni._id
     });
@@ -175,7 +175,7 @@ const searchPeople = async () => {
   // ADD COMMENT
   const addComment = async(postId,text)=>{
 
-    const res = await axios.post("https://alumni-backend-vhm7.onrender.com/comment",{
+    const res = await axios.post("https://alumni-backend-connect.onrender.com/comment",{
       postId,
       userId:alumni._id,
       text
@@ -191,7 +191,7 @@ const searchPeople = async () => {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  await axios.post("https://alumni-backend-vhm7.onrender.com/connect", {
+  await axios.post("https://alumni-backend-connect.onrender.com/connect", {
     senderId: user._id,
     receiverId: receiverId,
     senderModel: user.role === "student" ? "Student" : "Alumni",
@@ -209,7 +209,7 @@ const searchPeople = async () => {
   if (!user) return;
 
   axios
-    .get(`https://alumni-backend-vhm7.onrender.com/suggestions/${user._id}/${user.role}`)
+    .get(`https://alumni-backend-connect.onrender.com/suggestions/${user._id}/${user.role}`)
     .then(res => {
       setSuggestions(res.data);
       console.log("SUGGESTIONS:", res.data); // DEBUG
@@ -221,7 +221,7 @@ const searchPeople = async () => {
   // SAVE PROFILE
   const saveProfile = async ()=>{
 
-    await axios.post("https://alumni-backend-vhm7.onrender.com/update-alumni",{
+    await axios.post("https://alumni-backend-connect.onrender.com/update-alumni",{
       id:alumni._id,
       currentWork:editProfile.currentWork,
       jobRole:editProfile.jobRole

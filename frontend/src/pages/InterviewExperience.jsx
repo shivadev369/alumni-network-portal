@@ -13,7 +13,7 @@ const InterviewExperience = () => {
 
   useEffect(() => {
     axios
-      .get("https://alumni-backend-vhm7.onrender.com/interviews/all")
+      .get("https://alumni-backend-connect.onrender.com/interviews/all")
       .then((res) => {
         setInterviews(res.data);
         setLoading(false);

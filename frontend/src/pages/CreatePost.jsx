@@ -29,7 +29,7 @@ const CreatePost = () => {
   // FETCH NOTIFICATIONS
   useEffect(()=>{
 
-    axios.get(`https://alumni-backend-vhm7.onrender.com/notifications/${user._id}`)
+    axios.get(`https://alumni-backend-connect.onrender.com/notifications/${user._id}`)
     .then(res=>setNotifications(res.data))
     .catch(err=>console.log(err))
 
@@ -40,7 +40,7 @@ const CreatePost = () => {
   const searchPeople = async () => {
 
     const res = await axios.get(
-      `https://alumni-backend-vhm7.onrender.com/search?name=${search}`
+      `https://alumni-backend-connect.onrender.com/search?name=${search}`
     );
 
     setResults(res.data);
@@ -90,7 +90,7 @@ const CreatePost = () => {
       setLoading(true);
 
       await axios.post(
-        "https://alumni-backend-vhm7.onrender.com/create-post",
+        "https://alumni-backend-connect.onrender.com/create-post",
         {
           content: form.content,
           image: form.image,

@@ -68,7 +68,7 @@ const submit = async (e) => {
 
   try {
 
-    await axios.post("https://alumni-backend-vhm7.onrender.com/register", {
+    await axios.post("https://alumni-backend-connect.onrender.com/register", {
       ...form,
       role
     });
